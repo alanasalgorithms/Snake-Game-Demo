@@ -1,11 +1,11 @@
-#Alana Burrell, Gabriela Ortega, and Lauren Waller
-#SCIS 346
-#Prof. Lawrence
-#6 Novemeber 2022
-#Group Project Demo Program
-#Language: Python
+# Alana Burrell, Gabriela Ortega, and Lauren Waller
+# SCIS 346
+# Prof. Lawrence
+# 6 Novemeber 2022
+# Group Project Demo Program
+# Language: Python
 
-print("🐍Game Rules🐍\n+1 Point: 🍖\n+1 Point: 🍒\n+1 Point: 💘\n+5 Points: 💰\n-3 Points: ⚡\nESC: End Game\nHitting the Border: Lose Game\n\n\nTo begin, press ENTER")
+print("🐍Game Rules🐍\n+1 Point: 🍖\n+1 Point: 🍒\n+1 Point: 💘\n+5 Points: 💰\n-3 Points: ⚡\nESC: End Game\nHitting the Border: Lose Game\n\n\n")
 
 def get_high_score():
     # Default high score
@@ -78,7 +78,10 @@ heart = (12,45)
 money = (1,55)
 lightning = (12, 40)
 lightning1 = (10, 5)
-lightning2 = (5, 26)
+lightning2 = (5, 25)
+lightning3 = (2, 30)
+lightning4 = (10, 45)
+lightning5 = (1, 10)
 
 win.addch(food[0], food[1], "🍖")
 win.addch(cherry[0], cherry[1], "🍒")
@@ -87,6 +90,9 @@ win.addch(money[0], money[1], "💰")
 win.addch(lightning[0], lightning[1], "⚡")
 win.addch(lightning1[0], lightning1[1], "⚡")
 win.addch(lightning2[0], lightning2[1], "⚡")
+win.addch(lightning3[0], lightning3[1], "⚡")
+win.addch(lightning4[0], lightning4[1], "⚡")
+win.addch(lightning5[0], lightning5[1], "⚡")
 
 
 # game logic
@@ -216,6 +222,38 @@ while key != ESC:
                 lightning2 = ()
         win.addch(lightning2[0], lightning2[1], "⚡")
                   
+    if snake[0] == lightning3:
+        score -= 3
+        lightning3 = ()
+          #this prevents the new food from generating inside of the snake/ snake's coordinates.
+        while lightning3 == ():
+            lightning3 = (randint(1,WINDOW_HEIGHT-3), randint(1,WINDOW_WIDTH-3))
+            if lightning3 in snake:
+                lightning3 = ()
+        win.addch(lightning3[0], lightning3[1], "⚡")
+
+
+                  
+    if snake[0] == lightning4:
+        score -= 3
+        lightning4 = ()
+          #this prevents the new food from generating inside of the snake/ snake's coordinates.
+        while lightning4 == ():
+            lightning4 = (randint(1,WINDOW_HEIGHT-3), randint(1,WINDOW_WIDTH-3))
+            if lightning4 in snake:
+                lightning4 = ()
+        win.addch(lightning4[0], lightning4[1], "⚡")
+
+                  
+    if snake[0] == lightning5:
+        score -= 3
+        lightning5 = ()
+          #this prevents the new food from generating inside of the snake/ snake's coordinates.
+        while lightning5 == ():
+            lightning5 = (randint(1,WINDOW_HEIGHT-3), randint(1,WINDOW_WIDTH-3))
+            if lightning5 in snake:
+                lightning5 = ()
+        win.addch(lightning5[0], lightning5[1], "⚡")
                   
     else:
       #move snake
@@ -224,8 +262,10 @@ while key != ESC:
 #this gives the new precision of our snake
     win.addch(snake[0][0], snake[0][1], '*')
 
+
 curses.endwin()
 print(f"Your score = {score}")
+# begin code to store the high score
 def main():
     """ Main program is here. """
     # Get the high score
@@ -246,9 +286,9 @@ def main():
         print("You set a NEW RECORD! \n\n\n\n\nYou dropped this, Queen 🏆")
         save_high_score(current_score)
     elif current_score == high_score:
-        print("You almost beat the high score! Play again 🐍")
+        print("You almost beat the high score!\n\nYou should play again... 🐍")
     else:
-        print("Better luck next time 🐍")
+        print("Better luck next time! 🐍")
  
 # Call the main function, start up the game
 if __name__ == "__main__":

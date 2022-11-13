@@ -1,0 +1,40 @@
+Print the Game Rules before the game play is initiated
+
+fix bugs from using emoji as the food
+        (must count the score every time!)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~FUTURE__WORK~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+give the user an option to enter their initials alongside their high score.
+
+add different complexity levels depending on the user's preference
+>>easy (2 lightning, 2 money bag(start  money bag not in a corner))
+>>intermediate (4 lightning)
+>>hard (6 lightning, all items start in the corner)
+>>Expert(6 lightning, no money bag, heart has value 3, all items start in corner)
+>>Extreme(6 lightning, no money bag, heart has value 3, snake cannot 360 or run itself over, all items start in the corner)
+
+add music to the game (cobra kai theme song)
+add sound effect for eating food
+
+enable a pause button
+use a modal to pop up the instructions when the user pauses
+
+use a modal for the high score/ try again/ new record popup
+
+add emoji to create the snake body
+        stop growing the snake's body after earning 10 stars
+
+keep a counter of how many cherry, heart, meat, bags, and lightning were collected
